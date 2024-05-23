@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Tasks</h2>
+                <h2>
+                    <span class="rotate-symbol">🔄</span>Tasks
+                </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('tasks.create') }}"> Create New Task</a>

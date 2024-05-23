@@ -1,0 +1,65 @@
+/* public/css/app.css */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-symbol {
+    display: inline-block;
+    animation: rotate 2s linear infinite;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.table {
+    margin-top: 20px;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.margin-tb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pull-left h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.pull-right .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.pull-right .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
