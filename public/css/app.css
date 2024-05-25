@@ -55,11 +55,11 @@ body {
 }
 
 .pull-right .btn-success {
-    background-color: #28a745;
+    background-color: #323e35;
     border-color: #28a745;
 }
 
 .pull-right .btn-success:hover {
-    background-color: #218838;
+    background-color: #2d382f;
     border-color: #1e7e34;
 }
