@@ -39,9 +39,29 @@
                     <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group form-check">
+                    <input type="hidden" name="completed" value="0">
+                    <input type="checkbox" name="completed" id="completed" class="form-check-input" value="1">
+                    <label for="completed" class="form-check-label"><strong>Completed</strong></label>
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const checkbox = document.getElementById('completed');
+            const hiddenInput = document.querySelector('input[name="completed"][type="hidden"]');
+            
+            checkbox.addEventListener('change', () => {
+                hiddenInput.value = checkbox.checked ? '1' : '0';
+            });
+        });
+    </script>
 @endsection

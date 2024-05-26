@@ -25,5 +25,11 @@
                 {{ $task->description }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Completed:</strong>
+                {{ $task->completed }}
+            </div>
+        </div>
     </div>
 @endsection

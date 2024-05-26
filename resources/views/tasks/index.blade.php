@@ -25,6 +25,7 @@
             <th>No</th>
             <th>Title</th>
             <th>Description</th>
+            <th>Completed</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($tasks as $task)
@@ -32,6 +33,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $task->title }}</td>
             <td>{{ $task->description }}</td>
+            <td>{{ $task->completed  }}</td>
             <td>
                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('tasks.show', $task->id) }}">Show</a>
