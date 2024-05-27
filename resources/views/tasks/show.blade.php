@@ -80,37 +80,38 @@
     </form>
 
     @if ($task->subtasks->count())
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <table class="table table-bordered">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                    <th width="280px">Action</th>
+                </tr>
+                @php $i = 0; @endphp
+                @foreach ($task->subtasks as $subtask)
                     <tr>
-                        <th>No</th>
-                        <th>Title</th>
-                        <th>Completed</th>
-                        <th width="280px">Action</th>
+                        <td>{{ ++$i }}</td>
+                        <td>{{ $subtask->title }}</td>
+                        <td>{{ $subtask->completed ? 'Yes' : 'No' }}</td>
+                        <td>
+                            <form action="{{ route('tasks.subtasks.destroy', [$task->id, $subtask->id]) }}" method="POST">
+                                <a class="btn btn-primary" href="{{ route('tasks.subtasks.edit', [$task->id, $subtask->id]) }}">Edit</a>
+
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
-                    @php $i = 0; @endphp
-                    @foreach ($task->subtasks as $subtask)
-                        <tr>
-                            <td>{{ ++$i }}</td>
-                            <td>{{ $subtask->title }}</td>
-                            <td>{{ $subtask->completed ? 'Yes' : 'No' }}</td>
-                            <td>
-                                <form action="{{ route('tasks.subtasks.destroy', [$task->id, $subtask->id]) }}" method="POST">
-                                    <a class="btn btn-primary" href="{{ route('tasks.subtasks.edit', [$task->id, $subtask->id]) }}">Edit</a>
-
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </table>
-            </div>
+                @endforeach
+            </table>
         </div>
+    </div>
     @endif
+
 @endsection
 
 

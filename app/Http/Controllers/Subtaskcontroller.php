@@ -22,6 +22,15 @@ class SubtaskController extends Controller
                          ->with('success', 'Subtask created successfully.');
     }
 
+    public function edit($taskId, $subtaskId)
+    {
+        // Find the subtask by its ID
+        $subtask = Subtask::findOrFail($subtaskId);
+
+        // Pass the subtask data to the view for editing
+        return view('subtasks.edit', compact('subtask'));
+    }
+
     public function update(Request $request, Task $task, Subtask $subtask)
     {
         $request->validate([

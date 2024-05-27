@@ -16,3 +16,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::put('/tasks/{taskId}/subtasks/{subtaskId}', [SubtaskController::class, 'update'])->name('subtasks.update');
