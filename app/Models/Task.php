@@ -11,6 +11,15 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'completed'
+        'completed',
+        'priority',
+        'due_date',
+        'reminder'
     ];
+
+public function subtasks()
+{
+    return $this->hasMany(Subtask::class);
 }
+}
+

@@ -23,6 +23,9 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required|string',
+            'priority' => 'required|integer|min:0|max:2',
+            'due_date' => 'nullable|date',
+            'reminder' => 'nullable|date',
         ]);
 
         Task::create($request->all());
@@ -47,6 +50,9 @@ class TaskController extends Controller
             'title' => 'required',
             'description' => 'nullable|string',
             'completed' => 'boolean',
+            'priority' => 'required|integer|min:0|max:2',
+            'due_date' => 'nullable|date',
+            'reminder' => 'nullable|date',
         ]);
 
         $task->update($request->all());

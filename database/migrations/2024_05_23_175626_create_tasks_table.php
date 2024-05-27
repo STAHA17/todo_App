@@ -18,6 +18,11 @@ class CreateTasksTable extends Migration
         $table->string('title');
         $table->text('description')->nullable();
         $table->boolean('completed')->default(false);
+        
+        $table->integer('priority')->default(0); // 0: Low, 1: Medium, 2: High
+        $table->timestamp('due_date')->nullable();
+        $table->timestamp('reminder')->nullable();
+        
         $table->timestamps();
     });
 }

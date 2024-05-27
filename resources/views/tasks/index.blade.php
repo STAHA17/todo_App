@@ -26,6 +26,9 @@
             <th>Title</th>
             <th>Description</th>
             <th>Completed</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Reminder</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($tasks as $task)
@@ -34,6 +37,9 @@
             <td>{{ $task->title }}</td>
             <td>{{ $task->description }}</td>
             <td>{{ $task->completed  }}</td>
+            <td>{{ $task->priority  }}</td>
+            <td>{{ $task->due_date  }}</td>
+            <td>{{ $task->reminder  }}</td>
             <td>
                 <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('tasks.show', $task->id) }}">Show</a>
