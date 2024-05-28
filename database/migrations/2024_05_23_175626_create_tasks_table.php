@@ -22,6 +22,8 @@ class CreateTasksTable extends Migration
         $table->integer('priority')->default(0); // 0: Low, 1: Medium, 2: High
         $table->timestamp('due_date')->nullable();
         $table->timestamp('reminder')->nullable();
+
+        $table->string('image')->nullable();
         
         $table->timestamps();
     });

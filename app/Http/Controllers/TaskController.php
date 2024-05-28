@@ -26,9 +26,18 @@ class TaskController extends Controller
             'priority' => 'required|integer|min:0|max:2',
             'due_date' => 'nullable|date',
             'reminder' => 'nullable|date',
+            'image' => 'sometimes|image|max:2048',
         ]);
 
         Task::create($request->all());
+
+        //$input = $request->all();
+
+        if ($request->hasFile('image')) {
+            $input['image'] = $request->file('image')->store('images', 'public');
+        }
+
+        Task::create($input);
 
         return redirect()->route('tasks.index')
             ->with('success', 'Task created successfully.');
@@ -53,6 +62,7 @@ class TaskController extends Controller
             'priority' => 'required|integer|min:0|max:2',
             'due_date' => 'nullable|date',
             'reminder' => 'nullable|date',
+            'image' => 'sometimes|image|max:2048',
         ]);
 
         $task->update($request->all());
