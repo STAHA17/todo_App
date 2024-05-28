@@ -14,8 +14,7 @@ class Task extends Model
         'completed',
         'priority',
         'due_date',
-        'reminder',
-        'image',
+        'reminder'
     ];
 
 public function subtasks()

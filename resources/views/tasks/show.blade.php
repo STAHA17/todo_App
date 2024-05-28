@@ -40,12 +40,6 @@
                 <strong>Reminder:</strong>
                 {{ $task->reminder }}
             </div>
-            <div class="form-group">
-                <strong>Image:</strong>
-                @if ($task->image)
-                    <img src="{{ asset('storage/' . $task->image) }}" alt="Task Image" width="100">
-                @endif
-            </div>
         </div>
     </div>
 
