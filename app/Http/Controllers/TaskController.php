@@ -23,6 +23,7 @@ class TaskController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required|string',
+            'completed' => 'boolean',
             'priority' => 'required|integer|min:0|max:2',
             'due_date' => 'nullable|date',
             'reminder' => 'nullable|date',
