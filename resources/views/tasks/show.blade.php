@@ -40,10 +40,6 @@
                 <strong>Reminder:</strong>
                 {{ $task->reminder }}
             </div>
-            <div class="form-group">
-                <strong>Image:</strong>
-                {{ $task->image }}
-            </div>
         </div>
     </div>
 

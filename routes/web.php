@@ -5,7 +5,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\SubtaskController;
 
 Route::resource('tasks', TaskController::class);
-
+    
 Route::get('/', function () {
     return view('welcome');
 });

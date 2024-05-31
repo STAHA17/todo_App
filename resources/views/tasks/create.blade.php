@@ -62,7 +62,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Due Date:</strong>
-                    <input type="date" name="due_date" class="form-control">
+                    <input type="datetime-local" name="due_date" class="form-control">
                 </div>
             </div>
 
@@ -70,13 +70,6 @@
                 <div class="form-group">
                     <strong>Reminder:</strong>
                     <input type="datetime-local" name="reminder" class="form-control">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                <strong>Image:</strong>
-                <input type="file" name="image" class="form-control">
                 </div>
             </div>
 
