@@ -1,15 +1,16 @@
+<!-- resources/views/tasks/show.blade.php -->
 @extends('layouts.app')
 
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
+            <div class="pull-left">
                 <h2>
-                    <span class="rotate-symbol">🔄</span>Tasks Details
+                    <span class="rotate-symbol">🔄</span> Tasks Details
                 </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('tasks.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('tasks.index') }}">Back</a>
             </div>
         </div>
     </div>
@@ -26,7 +27,7 @@
             </div>
             <div class="form-group">
                 <strong>Completed:</strong>
-                {{ $task->completed }}
+                {{ $task->completed ? 'Yes' : 'No' }}
             </div>
             <div class="form-group">
                 <strong>Priority:</strong>
@@ -111,7 +112,4 @@
         </div>
     </div>
     @endif
-
 @endsection
-
-
